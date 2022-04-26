@@ -1,2 +1,4 @@
 # SwiftUIDemo
-SwiftUI Demo to demonstrate different capability of my skill to use.
+SwiftUI Demo App - iPhone app - to demonstrate different capability using Flickr API.
+
+Currently App uses the Flickr API but is not endorsed or certified by Flickr.
