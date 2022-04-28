@@ -46,3 +46,9 @@ struct Item: Codable {
 struct Media: Codable {
     let m: String
 }
+
+struct FlickrPhoto {
+    let id: String
+    let photoModel: PhotoModel? = nil
+    let photoExif: PhotoExif? = nil 
+}

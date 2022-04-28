@@ -26,10 +26,13 @@ struct SearchView: View {
                     }
                 }
                 
-                
                 List(photoListVM.photos, id:\.id) { photo in
                     VStack {
-                        AsyncImageView(url: photo.url_m ?? "")
+                        let flickrPhoto = FlickrPhoto(id: photo.id)
+                        NavigationLink(destination: PhotoDetailsView(flickrPhoto: flickrPhoto)){
+                            AsyncImageView(url: photo.url_m ?? "")
+                        }
+
                             .aspectRatio(contentMode: .fit)
                         Text(photo.title)
                     }

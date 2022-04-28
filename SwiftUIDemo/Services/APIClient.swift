@@ -84,4 +84,18 @@ class ApiClient {
         let decodedResponse = try? decoder.decode(PhotoExifResponse.self, from: data)
         return decodedResponse?.photo ?? nil
     }
+    
+    func publicFeed() async throws -> [Item]  {
+        guard let url = URL(string:PUBLIC_FEED_BASE_URL) else {
+            throw NetworkError.badURL
+        }
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        
+        guard let photos = try? decoder.decode(PublicFeedResponse.self, from: data).items else {
+            throw NetworkError.badData
+        }
+        return photos
+    }
 }

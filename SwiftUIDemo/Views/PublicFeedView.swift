@@ -8,18 +8,27 @@
 import SwiftUI
 
 struct PublicFeedView: View {
-    @ObservedObject var randomeFeed = RandomFeedData()
+    @State var photoItems : [Item] = []
+
     var body: some View {
         NavigationView{
             ScrollView{
                 LazyVStack(alignment: .center){
-                    ForEach(randomeFeed.photoItems, id:\.authorID) { item in
+                    ForEach(photoItems, id:\.authorID) { item in
                         NavigationLink(destination: PhotoView(selectedItem: item)){
                             AsyncImageView(url: item.media.m)
                         }
                     }
                 }
-            }.navigationBarTitle(Text("Trending Feed"))
+            }
+            .navigationBarTitle(Text("Trending Feed"))
+            .task {
+                do {
+                    photoItems = try await ApiClient().publicFeed()
+                } catch{
+                    print("Error loading data")
+                }
+            }
         }
     }
 }

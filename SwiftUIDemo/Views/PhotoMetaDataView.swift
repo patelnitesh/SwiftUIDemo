@@ -13,11 +13,17 @@ struct PhotoMetaDataView: View {
 
     var body: some View {
         VStack(){
-            Text("Hello, World!")
             if let photoExifModel = photoExifModel {
-                MetaDataView(photoExifModel: photoExifModel)
+                MetaDataView(photoExifModel: photoExifModel, photoModel: photoModel)
             }
-        }.task {
+        }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+              Text("Meta Data")
+                .fontWeight(.bold)
+            }
+        }
+        .task {
             do {
                 photoExifModel = try await ApiClient().loadMetaData(photoId: "52023860981")
             } catch{
@@ -37,6 +43,7 @@ struct PhotoMetaDataView_Previews: PreviewProvider {
 
 struct MetaDataView: View {
     let photoExifModel: PhotoExif
+    let photoModel: PhotoModel
 
     var body: some View {
         NavigationView {
@@ -60,27 +67,27 @@ struct MetaDataView: View {
                                 Text("\(photoExifModel.exif.count)")
                             }
                             
-//                            HStack(alignment: .center,spacing: 5){
-//                                Text("Title :")
-//                                    .bold()
-//                                Text(photoModel.title.content)
-//                            }
-//                            HStack(spacing: 5) {
-//                                Text("Owner :").bold()
-//                                Text(photoModel.owner.realname)
-//                            }
-//                            HStack(spacing: 5) {
-//                                Text("Taken on :").bold()
-//                                Text(photoModel.dates.taken)
-//                            }
-//                            HStack(spacing: 5) {
-//                                Text("Views :").bold()
-//                                Text(photoModel.views)
-//                            }
-//                            HStack(spacing: 5) {
-//                                Text("Tags :").bold()
-//                                Text("\(photoModel.tags.tag.map{ $0.raw}.joined(separator: ", "))")
-//                            }
+                            HStack(alignment: .center,spacing: 5){
+                                Text("Title :")
+                                    .bold()
+                                Text(photoModel.title.content)
+                            }
+                            HStack(spacing: 5) {
+                                Text("Owner :").bold()
+                                Text(photoModel.owner.realname)
+                            }
+                            HStack(spacing: 5) {
+                                Text("Taken on :").bold()
+                                Text(photoModel.dates.taken)
+                            }
+                            HStack(spacing: 5) {
+                                Text("Views :").bold()
+                                Text(photoModel.views)
+                            }
+                            HStack(spacing: 5) {
+                                Text("Tags :").bold()
+                                Text("\(photoModel.tags.tag.map{ $0.raw}.joined(separator: ", "))")
+                            }
                             
                         }.padding(10)
                         
