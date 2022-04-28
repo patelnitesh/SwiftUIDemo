@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        TabView{
+        TabView {
             PublicFeedView()
                 .tabItem {
                     Label("Public Feed", systemImage: "list.dash")

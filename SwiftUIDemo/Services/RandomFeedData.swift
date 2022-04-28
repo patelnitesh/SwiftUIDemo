@@ -15,7 +15,7 @@ class RandomFeedData: ObservableObject {
     }
     
     func loadRandomFeedData()  {
-        guard let url = URL(string:publicFeedURL) else {
+        guard let url = URL(string:PUBLIC_FEED_BASE_URL) else {
             print("Invalid URL")
             return
         }

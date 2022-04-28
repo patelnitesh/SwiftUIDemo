@@ -1,5 +1,5 @@
 //
-//  AsyncImageView.swift
+//  FullSizeImageView.swift
 //  SwiftUIDemo
 //
 //  Created by Nitesh Patel on 28/04/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AsyncImageView: View {
+struct FullPhotoView: View {
     var url: String
     
     var body: some View {
@@ -25,8 +25,6 @@ struct AsyncImageView: View {
                 ProgressView()
             }
         }
-        .aspectRatio(contentMode: .fill)
-        .frame(width: UIScreen.main.bounds.width - 50, height: 400, alignment: .center)
-        .cornerRadius(10)
+        .aspectRatio(contentMode: .fit)
     }
 }

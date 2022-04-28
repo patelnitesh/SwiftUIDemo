@@ -14,9 +14,9 @@ struct PublicFeedView: View {
             ScrollView{
                 LazyVStack(alignment: .center){
                     ForEach(randomeFeed.photoItems, id:\.authorID) { item in
-                       // NavigationLink(destination: PhotoCardView(selectedItem: item)){
+                        NavigationLink(destination: PhotoView(selectedItem: item)){
                             AsyncImageView(url: item.media.m)
-//                        }
+                        }
                     }
                 }
             }.navigationBarTitle(Text("Trending Feed"))
