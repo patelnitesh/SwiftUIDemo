@@ -1,0 +1,399 @@
+{
+  "photo": {
+    "id": "52032340671",
+    "secret": "d2b089c2f9",
+    "server": "65535",
+    "farm": 66,
+    "camera": "motorola moto g stylus 5G",
+    "exif": [
+      {
+        "tagspace": "JFIF",
+        "tagspaceid": 0,
+        "tag": "JFIFVersion",
+        "label": "JFIFVersion",
+        "raw": {
+          "_content": "1.02"
+        }
+      },
+      {
+        "tagspace": "JFIF",
+        "tagspaceid": 0,
+        "tag": "ResolutionUnit",
+        "label": "Resolution Unit",
+        "raw": {
+          "_content": "None"
+        }
+      },
+      {
+        "tagspace": "JFIF",
+        "tagspaceid": 0,
+        "tag": "XResolution",
+        "label": "X-Resolution",
+        "raw": {
+          "_content": "1"
+        }
+      },
+      {
+        "tagspace": "JFIF",
+        "tagspaceid": 0,
+        "tag": "YResolution",
+        "label": "Y-Resolution",
+        "raw": {
+          "_content": "1"
+        }
+      },
+      {
+        "tagspace": "IFD0",
+        "tagspaceid": 0,
+        "tag": "ImageWidth",
+        "label": "Image Width",
+        "raw": {
+          "_content": "2304"
+        }
+      },
+      {
+        "tagspace": "IFD0",
+        "tagspaceid": 0,
+        "tag": "ImageHeight",
+        "label": "Image Height",
+        "raw": {
+          "_content": "1728"
+        }
+      },
+      {
+        "tagspace": "IFD0",
+        "tagspaceid": 0,
+        "tag": "Compression",
+        "label": "Compression",
+        "raw": {
+          "_content": "JPEG (old-style)"
+        }
+      },
+      {
+        "tagspace": "IFD0",
+        "tagspaceid": 0,
+        "tag": "Make",
+        "label": "Make",
+        "raw": {
+          "_content": "motorola"
+        }
+      },
+      {
+        "tagspace": "IFD0",
+        "tagspaceid": 0,
+        "tag": "Model",
+        "label": "Model",
+        "raw": {
+          "_content": "moto g stylus 5G"
+        }
+      },
+      {
+        "tagspace": "IFD0",
+        "tagspaceid": 0,
+        "tag": "Orientation",
+        "label": "Orientation",
+        "raw": {
+          "_content": "Horizontal (normal)"
+        }
+      },
+      {
+        "tagspace": "IFD0",
+        "tagspaceid": 0,
+        "tag": "ResolutionUnit",
+        "label": "Resolution Unit",
+        "raw": {
+          "_content": "inches"
+        }
+      },
+      {
+        "tagspace": "IFD0",
+        "tagspaceid": 0,
+        "tag": "ModifyDate",
+        "label": "Date and Time (Modified)",
+        "raw": {
+          "_content": "2022:04:15 09:27:36"
+        }
+      },
+      {
+        "tagspace": "IFD0",
+        "tagspaceid": 0,
+        "tag": "YCbCrPositioning",
+        "label": "YCbCr Positioning",
+        "raw": {
+          "_content": "Centered"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "ExposureTime",
+        "label": "Exposure",
+        "raw": {
+          "_content": "1/720"
+        },
+        "clean": {
+          "_content": "0.001 sec (1/720)"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "FNumber",
+        "label": "Aperture",
+        "raw": {
+          "_content": "2.2"
+        },
+        "clean": {
+          "_content": "f/2.2"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "ExposureProgram",
+        "label": "Exposure Program",
+        "raw": {
+          "_content": "Program AE"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "ISO",
+        "label": "ISO Speed",
+        "raw": {
+          "_content": "100"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "ExifVersion",
+        "label": "Exif Version",
+        "raw": {
+          "_content": "0220"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "DateTimeOriginal",
+        "label": "Date and Time (Original)",
+        "raw": {
+          "_content": "2022:04:15 09:27:36"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "CreateDate",
+        "label": "Date and Time (Digitized)",
+        "raw": {
+          "_content": "2022:04:15 09:27:36"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "ComponentsConfiguration",
+        "label": "Components Configuration",
+        "raw": {
+          "_content": "Y, Cb, Cr, -"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "BrightnessValue",
+        "label": "Brightness Value",
+        "raw": {
+          "_content": "6.19"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "ExposureCompensation",
+        "label": "Exposure Bias",
+        "raw": {
+          "_content": "0"
+        },
+        "clean": {
+          "_content": "0 EV"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "MaxApertureValue",
+        "label": "Max Aperture Value",
+        "raw": {
+          "_content": "2.2"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "MeteringMode",
+        "label": "Metering Mode",
+        "raw": {
+          "_content": "Center-weighted average"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "LightSource",
+        "label": "Light Source",
+        "raw": {
+          "_content": "D65"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "Flash",
+        "label": "Flash",
+        "raw": {
+          "_content": "Off, Did not fire"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "FocalLength",
+        "label": "Focal Length",
+        "raw": {
+          "_content": "3.7 mm"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "SubSecTime",
+        "label": "Sub Sec Time",
+        "raw": {
+          "_content": "799869"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "SubSecTimeOriginal",
+        "label": "Sub Sec Time Original",
+        "raw": {
+          "_content": "799869"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "SubSecTimeDigitized",
+        "label": "Sub Sec Time Digitized",
+        "raw": {
+          "_content": "799869"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "FlashpixVersion",
+        "label": "Flashpix Version",
+        "raw": {
+          "_content": "0100"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "ColorSpace",
+        "label": "Color Space",
+        "raw": {
+          "_content": "sRGB"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "SensingMethod",
+        "label": "Sensing Method",
+        "raw": {
+          "_content": "Not defined"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "SceneType",
+        "label": "Scene Type",
+        "raw": {
+          "_content": "Directly photographed"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "ExposureMode",
+        "label": "Exposure Mode",
+        "raw": {
+          "_content": "Auto"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "WhiteBalance",
+        "label": "White Balance",
+        "raw": {
+          "_content": "Auto"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "DigitalZoomRatio",
+        "label": "Digital Zoom Ratio",
+        "raw": {
+          "_content": "2"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "FocalLengthIn35mmFormat",
+        "label": "Focal Length (35mm format)",
+        "raw": {
+          "_content": "28 mm"
+        }
+      },
+      {
+        "tagspace": "ExifIFD",
+        "tagspaceid": 0,
+        "tag": "SceneCaptureType",
+        "label": "Scene Capture Type",
+        "raw": {
+          "_content": "Standard"
+        }
+      },
+      {
+        "tagspace": "InteropIFD",
+        "tagspaceid": 0,
+        "tag": "InteropIndex",
+        "label": "Interop Index",
+        "raw": {
+          "_content": "R98 - DCF basic file (sRGB)"
+        }
+      },
+      {
+        "tagspace": "InteropIFD",
+        "tagspaceid": 0,
+        "tag": "InteropVersion",
+        "label": "Interop Version",
+        "raw": {
+          "_content": "0100"
+        }
+      }
+    ]
+  },
+  "stat": "ok"
+}

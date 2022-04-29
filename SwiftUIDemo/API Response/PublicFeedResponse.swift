@@ -40,6 +40,13 @@ struct Item: Codable {
         case authorID = "author_id"
         case tags
     }
+    // MARK: Public feed does not have 
+    var picID : String {
+        guard let selectedPhotoID = link.components(separatedBy: "/").dropLast().last else {
+            return "unknown"
+        }
+        return selectedPhotoID
+    }
 }
 
 // MARK: - Media
@@ -47,8 +54,24 @@ struct Media: Codable {
     let m: String
 }
 
+// MARK: Flickr Photo to pass data to different views
 struct FlickrPhoto {
     let id: String
     let photoModel: PhotoModel? = nil
-    let photoExif: PhotoExif? = nil 
+    let photoExif: PhotoExif? = nil
+    let imageURL: String
+    let owner: String
+    let title: String
+
+    init(id: String,
+         photoModel: PhotoModel? = nil,
+         photoExif: PhotoExif? = nil,
+         imageURL: String,
+         owner: String = "",
+         title: String = "") {
+        self.id = id
+        self.imageURL = imageURL
+        self.owner = owner
+        self.title = title
+    }
 }

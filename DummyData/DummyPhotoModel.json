@@ -1,0 +1,79 @@
+{
+  "photo": {
+    "id": "52037256952",
+    "secret": "bc6fde9a6d",
+    "server": "65535",
+    "farm": 66,
+    "dateuploaded": "1651254686",
+    "isfavorite": 0,
+    "license": "0",
+    "safety_level": "0",
+    "rotation": 0,
+    "originalsecret": "21f5a68a01",
+    "originalformat": "jpg",
+    "owner": {
+      "nsid": "26963985@N00",
+      "username": "nemethp",
+      "realname": "Phil",
+      "location": "",
+      "iconserver": "2208",
+      "iconfarm": 3,
+      "path_alias": "nemethp"
+    },
+    "title": {
+      "_content": "MUSLM"
+    },
+    "description": {
+      "_content": ""
+    },
+    "visibility": {
+      "ispublic": 1,
+      "isfriend": 0,
+      "isfamily": 0
+    },
+    "dates": {
+      "posted": "1651254686",
+      "taken": "2022-04-28 18:36:51",
+      "takengranularity": 0,
+      "takenunknown": "0",
+      "lastupdate": "1651254688"
+    },
+    "views": "0",
+    "editability": {
+      "cancomment": 0,
+      "canaddmeta": 0
+    },
+    "publiceditability": {
+      "cancomment": 1,
+      "canaddmeta": 0
+    },
+    "usage": {
+      "candownload": 1,
+      "canblog": 0,
+      "canprint": 0,
+      "canshare": 0
+    },
+    "comments": {
+      "_content": "0"
+    },
+    "notes": {
+      "note": []
+    },
+    "people": {
+      "haspeople": 0
+    },
+    "tags": {
+      "tag": []
+    },
+    "urls": {
+      "url": [
+        {
+          "type": "photopage",
+          "_content": "https://www.flickr.com/photos/nemethp/52037256952/"
+        }
+      ]
+    },
+    "media": "photo"
+  },
+  "stat": "ok"
+}

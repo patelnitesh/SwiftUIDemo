@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11130EBA281C339800814472 /* DummyPhotoModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 11130EB8281C339800814472 /* DummyPhotoModel.json */; };
+		11130EBB281C339800814472 /* DummyPhotoExifModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 11130EB9281C339800814472 /* DummyPhotoExifModel.json */; };
 		11D1D966281AA91D00748060 /* SwiftUIDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1D965281AA91D00748060 /* SwiftUIDemoApp.swift */; };
 		11D1D968281AA91D00748060 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1D967281AA91D00748060 /* MainView.swift */; };
 		11D1D96A281AA92000748060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D1D969281AA92000748060 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11130EB8281C339800814472 /* DummyPhotoModel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DummyPhotoModel.json; sourceTree = "<group>"; };
+		11130EB9281C339800814472 /* DummyPhotoExifModel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DummyPhotoExifModel.json; sourceTree = "<group>"; };
 		11D1D962281AA91D00748060 /* SwiftUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D1D965281AA91D00748060 /* SwiftUIDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIDemoApp.swift; sourceTree = "<group>"; };
 		11D1D967281AA91D00748060 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -101,9 +105,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11130EB7281C335400814472 /* DummyData */ = {
+			isa = PBXGroup;
+			children = (
+				11130EB9281C339800814472 /* DummyPhotoExifModel.json */,
+				11130EB8281C339800814472 /* DummyPhotoModel.json */,
+			);
+			path = DummyData;
+			sourceTree = "<group>";
+		};
 		11D1D959281AA91D00748060 = {
 			isa = PBXGroup;
 			children = (
+				11130EB7281C335400814472 /* DummyData */,
 				11D1D964281AA91D00748060 /* SwiftUIDemo */,
 				11D1D975281AA92000748060 /* SwiftUIDemoTests */,
 				11D1D97F281AA92000748060 /* SwiftUIDemoUITests */,
@@ -165,12 +179,12 @@
 			isa = PBXGroup;
 			children = (
 				11D1D997281AAF7600748060 /* AsyncImageView.swift */,
+				11D1D9B8281AE74E00748060 /* FullSizeImageView.swift */,
 				11D1D967281AA91D00748060 /* MainView.swift */,
+				11D1D990281AAC8E00748060 /* PublicFeedView.swift */,
 				11D1D9AA281ACDDA00748060 /* PhotoMetaDataView.swift */,
 				11D1D9AE281AD35500748060 /* PhotoView.swift */,
-				11D1D990281AAC8E00748060 /* PublicFeedView.swift */,
 				11D1D992281AACB200748060 /* SearchView.swift */,
-				11D1D9B8281AE74E00748060 /* FullSizeImageView.swift */,
 				11D1D9BA281AF39800748060 /* PhotoDetailsView.swift */,
 			);
 			path = Views;
@@ -319,6 +333,8 @@
 			files = (
 				11D1D96D281AA92000748060 /* Preview Assets.xcassets in Resources */,
 				11D1D96A281AA92000748060 /* Assets.xcassets in Resources */,
+				11130EBA281C339800814472 /* DummyPhotoModel.json in Resources */,
+				11130EBB281C339800814472 /* DummyPhotoExifModel.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -545,6 +562,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

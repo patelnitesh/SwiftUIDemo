@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SearchView: View {
     @StateObject private var photoListVM = SearchListViewModel()
-
-    @State private var searchText: String = "Gardenn"
+    
+    @State private var searchText: String = ""
     @State var isSearchingTAGs = false
     
     var body: some View {
@@ -19,27 +19,22 @@ struct SearchView: View {
                 Toggle("**Search By Tags**", isOn:
                         $isSearchingTAGs)
                 .padding([.leading, .trailing])
-                .onChange(of: isSearchingTAGs) { newValue in
-                    print("toggle has change")
+                .onChange(of: isSearchingTAGs) { _ in
+                    photoListVM.photos.removeAll()
                     Task {
                         await photoListVM.search(text: searchText, isSearchingTag: isSearchingTAGs)
                     }
                 }
                 
                 List(photoListVM.photos, id:\.id) { photo in
-                    VStack {
-                        let flickrPhoto = FlickrPhoto(id: photo.id)
-                        NavigationLink(destination: PhotoDetailsView(flickrPhoto: flickrPhoto)){
-                            AsyncImageView(url: photo.url_m ?? "")
-                        }
-
-                            .aspectRatio(contentMode: .fit)
-                        Text(photo.title)
+                    NavigationLink(destination: PhotoDetailsView(flickrPhotos: photoListVM.convertedToFlickerPhotos(), picID: photo.id)){
+                        AsyncImageView(url: photo.url_m ?? "")
                     }
+                    .aspectRatio(contentMode: .fit)
                     .listRowSeparator(.hidden)
                 }
                 .listStyle(.plain)
-                .searchable(text: $searchText)
+                .searchable(text: $searchText, prompt: "Search Flickr")
                 .onChange(of: searchText) { value in
                     Task {
                         if !value.isEmpty &&  value.count > 3 {

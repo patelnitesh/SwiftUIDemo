@@ -19,13 +19,22 @@ class SearchListViewModel: ObservableObject {
         do {
             let tags = isSearchingTag ? text : ""
             let searchText = isSearchingTag ? "" : text
-            
             let photos = try await ApiClient().getFlickrPhotos(searchText: searchText, searchTag: tags)
-            self.photos = photos//.map(SearchPhotoViewModel.init)
-            
+            self.photos = photos
         } catch {
             print(error)
         }
+    }
+    
+    // MARK: - Map Public Photo into FlickerPhoto and returns as array
+    func convertedToFlickerPhotos() -> [FlickrPhoto] {
+        let filckrphotos = photos.map { photo -> FlickrPhoto in
+            return FlickrPhoto(id: photo.id,
+                        imageURL:photo.url_m ?? "",
+                        owner: photo.owner,
+                        title: photo.title)
+        }
+        return filckrphotos
     }
     
 }

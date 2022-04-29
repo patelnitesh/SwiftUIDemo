@@ -19,30 +19,23 @@ struct PhotoModel: Codable {
     let id, secret, server: String
     let farm: Int
     let dateuploaded: String
-    let isfavorite:Int
-    let rotation: Int
-    let originalsecret, originalformat: String
     let owner: Owner
     let title, photoDescription: Description
-    let visibility: Visibility
     let dates: Dates
     let views: String
-    let editability, publiceditability: Editability
-    let usage: Usage
-    let comments: Comments
-    let notes: Notes
-    let people: People
     let tags: Tags
     let urls: Urls
     let media: String
 
     enum CodingKeys: String, CodingKey {
         case photoDescription = "description"
-        case id, secret, server, farm, dateuploaded, isfavorite
-        case rotation, originalsecret, originalformat, owner, title
-        case visibility, dates, views, editability, publiceditability, usage, comments
-        case notes, people, tags, urls, media
+        case id, secret, server, farm, dateuploaded
+        case owner, title, dates, views, tags, urls, media
     }
+    
+    // Canvert date 
+    //let uploadedDate = DateFormatter().String(Date(timeIntervalSince1970: Double(dateuploaded)))
+    
 }
 
 // MARK: - Comments
@@ -109,12 +102,10 @@ struct Tags: Codable {
 struct Tag: Codable {
     let id, author, authorname, raw: String
     let content: String
-    let machineTag: Int
 
     enum CodingKeys: String, CodingKey {
         case id, author, authorname, raw
         case content = "_content"
-        case machineTag = "machine_tag"
     }
 }
 

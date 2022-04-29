@@ -17,16 +17,20 @@ struct AsyncImageView: View {
                     .resizable()
                     .scaledToFit()
             } else if media.error != nil {
-                HStack {
-                    Image(systemName: "photo")
+                ZStack(alignment: .bottomTrailing){
+                    Image(systemName: "photo.artframe")
+                        .resizable()
+                        .scaledToFill()
                     Text("There was an error loading the image.")
+                        .padding(0)
+                        .font(.caption2)
+                        .foregroundColor(.white)
+                        .offset(x: -5, y: -5)
                 }
             } else {
                 ProgressView()
             }
         }
-        .aspectRatio(contentMode: .fill)
-        .frame(width: UIScreen.main.bounds.width - 50, height: 400, alignment: .center)
-        .cornerRadius(10)
+        .aspectRatio(contentMode: .fit)
     }
 }
