@@ -7,18 +7,25 @@
 
 import SwiftUI
 
+enum Sorting: String {
+    case PublishDate
+    case TakenDate
+}
+
 struct PublicFeedView: View {
     @State var photoItems: [Item] = []
-    @State private var sortedBy = "PublishedDate"
+    @State private var sortedBy = Sorting.PublishDate
     
     var body: some View {
         NavigationView {
             VStack{
                 Form{
+                    // TODO: Update picker style in line with new desgin 
                     Picker("Sorted by", selection: $sortedBy) {
-                        Text("Published Date").tag("PublishedDate")
-                        Text("Taken Date").tag("TakenDate")
+                        Text("Published Date").tag(Sorting.PublishDate)
+                        Text("Taken Date").tag(Sorting.TakenDate)
                     }
+                    .pickerStyle(.segmented)
 
                     List{
                         ForEach(photoItems, id: \.picID) { item in
@@ -63,10 +70,11 @@ struct PublicFeedView: View {
     }
     
     /// Result sorted by relavent Dates
-    private func sortedResultBy(){
-        if sortedBy == "PublishedDate" {
+    private func sortedResultBy() {
+        switch sortedBy {
+        case .PublishDate:
             photoItems = photoItems.sorted(by: { $0.dateTaken > $1.dateTaken })
-        } else if sortedBy == "TakenDate" {
+        case .TakenDate:
             photoItems = photoItems.sorted(by: { $0.published > $1.published })
         }
     }

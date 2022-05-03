@@ -71,6 +71,7 @@ struct PhotoMetaDataView: View {
     }
     
     /// Possibly find all different icon for match key values
+    // TODO: also convert hardcoded string in to Enum
     private func image(for key:String, value: String) -> Image? {
         var image:Image? = nil
         
