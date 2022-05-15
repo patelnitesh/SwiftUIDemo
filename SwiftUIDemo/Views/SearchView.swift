@@ -16,6 +16,7 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             VStack{
+                
                 Toggle("**Search By Tags**", isOn:
                         $isSearchingTAGs)
                 .padding([.leading, .trailing])
@@ -26,15 +27,22 @@ struct SearchView: View {
                     }
                 }
                 
-                List(photoListVM.photos, id:\.id) { photo in
-                    NavigationLink(destination: PhotoDetailsView(flickrPhotos: photoListVM.convertedToFlickerPhotos(), picID: photo.id)){
-                        AsyncImageView(url: photo.url_m ?? "")
+                ScrollView{
+                    LazyVStack{
+                        ForEach(photoListVM.photos, id:\.id) { photo in
+                            NavigationLink(destination: PhotoDetailsView(flickrPhotos: photoListVM.convertedToFlickerPhotos(), picID: photo.id)){
+                                AsyncImageView(url: photo.url_m ?? "")
+                            }
+                            .aspectRatio(contentMode: .fit)
+                            .listRowSeparator(.hidden)
+                        }
                     }
-                    .aspectRatio(contentMode: .fit)
-                    .listRowSeparator(.hidden)
                 }
                 .listStyle(.plain)
                 .searchable(text: $searchText, prompt: "Search Flickr")
+                .onSubmit(of: .search, {
+                    runSearchQuery()
+                })
                 .onChange(of: searchText) { value in
                     Task {
                         if !value.isEmpty &&  value.count > 3 {
@@ -46,6 +54,14 @@ struct SearchView: View {
                 }
             }
             .navigationTitle("Result for \(searchText)")
+        }
+    }
+    
+    private func runSearchQuery () {
+        Task {
+            if !searchText.isEmpty {
+                await photoListVM.search(text: searchText, isSearchingTag: isSearchingTAGs)
+            }
         }
     }
 }

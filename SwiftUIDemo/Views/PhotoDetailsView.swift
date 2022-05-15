@@ -18,9 +18,11 @@ struct PhotoDetailsView: View {
 
     
     var body: some View {
+        if let photoModel = photoModel {
+            NavigationLink(destination: PhotoMetaDataView(photoModel: photoModel), isActive: $isShowingDetailView) { EmptyView() }
+        }
         TabView(selection: $selectedId) {
                 ForEach(flickrPhotos, id: \.id) { flickrPhoto in
-                    VStack{
                         AsyncImageView(url: flickrPhoto.imageURL)
                             .frame(width: UIScreen.main.bounds.width, alignment: .center)
                             .tag(flickrPhoto.id)
@@ -30,27 +32,28 @@ struct PhotoDetailsView: View {
                                 .onChanged{value in
                                     self.scale = value.magnitude
                                 }
-                        ).gesture(TapGesture(count: 2).onEnded{
-                            if(self.scale <= 2.0){
-                                self.scale = self.scale * 2
-                            } else if(self.scale >= 2.0){
-                                self.scale = 1.0
-                            }
-                        }).animation(.easeInOut(duration:0.2))
-
-                        
-                        if let photoModel = photoModel {
-                            NavigationLink(destination: PhotoMetaDataView(photoModel: photoModel), isActive: $isShowingDetailView) { EmptyView() }
-                        }
-                        
-                    }
-                    .alert(isPresented: $showError) {
-                        Alert(title: Text("Error"), message: Text("Can not load photo information. Please try again or choose another picture."), dismissButton: .default(Text("Okay")))
-                    }
+                            ).gesture(TapGesture(count: 2).onEnded{
+                                if(self.scale <= 2.0){
+                                    self.scale = self.scale * 2
+                                } else if(self.scale >= 2.0){
+                                    self.scale = 1.0
+                                }
+                            })
+                            .animation(.spring(response: 1.5), value: selectedId)
+                }
+                .alert(isPresented: $showError) {
+                    Alert(title: Text("Error"), message: Text("Can not load photo information. Please try again or choose another picture."), dismissButton: .default(Text("Okay")))
                 }
         }
-        
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        
+        .onAppear(){
+            selectedId = picID
+        }
+        .onChange(of: selectedId) { newValue in
+            self.scale = 1.0
+        }
+        
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button {
@@ -59,9 +62,6 @@ struct PhotoDetailsView: View {
                     Image(systemName: "info.circle")
                 }
             }
-        }
-        .onAppear(){
-            selectedId = picID
         }
     }
     

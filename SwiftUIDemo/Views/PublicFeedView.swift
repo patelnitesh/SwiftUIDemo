@@ -8,8 +8,8 @@
 import SwiftUI
 
 enum Sorting: String {
-    case PublishDate
-    case TakenDate
+    case PublishDate = "Published Date"
+    case TakenDate = "Taken Date"
 }
 
 struct PublicFeedView: View {
@@ -19,25 +19,24 @@ struct PublicFeedView: View {
     var body: some View {
         NavigationView {
             VStack{
-                Form{
-                    // TODO: Update picker style in line with new desgin 
                     Picker("Sorted by", selection: $sortedBy) {
-                        Text("Published Date").tag(Sorting.PublishDate)
-                        Text("Taken Date").tag(Sorting.TakenDate)
+                        Text(Sorting.PublishDate.rawValue).tag(Sorting.PublishDate)
+                        Text(Sorting.TakenDate.rawValue).tag(Sorting.TakenDate)
                     }
                     .pickerStyle(.segmented)
+                    .padding(10)
+                
+                    ScrollView{
+                        LazyVStack{
+                            ForEach(photoItems, id: \.picID) { photo in
+                                NavigationLink(destination:PhotoDetailsView(flickrPhotos: flickrPhotos(), picID: photo.picID)){
+                                    AsyncImageView(url: photo.media.m)
+                                }
 
-                    List{
-                        ForEach(photoItems, id: \.picID) { item in
-                            NavigationLink(destination:PhotoDetailsView(flickrPhotos: flickrPhotos(),picID: item.picID)){
-                                AsyncImageView(url: item.media.m)
                             }
-                            .buttonStyle(.plain)
-                            .listRowSeparator(.hidden)
                         }
                     }
                 }
-            }
             .navigationBarTitle(Text("Public Feed"))
             .task {
                 await loadData()
@@ -63,13 +62,19 @@ struct PublicFeedView: View {
     /// Map Public Photos info into FlickerPhoto and returns as array
     private func flickrPhotos() -> [FlickrPhoto] {
         let filckrphotos = photoItems.map { item -> FlickrPhoto in
-            FlickrPhoto(id: item.link.components(separatedBy: "/").dropLast().last ?? "NoID",
+            print("pic id",item.picID)
+            return FlickrPhoto(id: item.picID,
                         imageURL:item.media.m.replacingOccurrences(of: "_m", with: "_b"))
+
         }
+        
         return filckrphotos
     }
     
-    /// Result sorted by relavent Dates
+    
+    /// Try and use comparable protocol for Dates
+    /// https://medium.com/nerd-for-tech/equatable-hashable-and-comparable-d782449f6ce8
+    /// Result sorted by relevant Dates
     private func sortedResultBy() {
         switch sortedBy {
         case .PublishDate:

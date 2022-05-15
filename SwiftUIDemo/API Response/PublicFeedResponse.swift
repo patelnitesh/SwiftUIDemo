@@ -40,12 +40,29 @@ struct Item: Codable {
         case authorID = "author_id"
         case tags
     }
+    
     // MARK: Public feed does not have 
     var picID : String {
         guard let selectedPhotoID = link.components(separatedBy: "/").dropLast().last else {
             return "unknown"
         }
         return selectedPhotoID
+    }
+}
+
+extension  Item {
+    static var dummyData: [Item] {
+        let dummyItem = Item.init(title: "Tile",
+              link: "https://www.flickr.com/photos/47676646@N08/52050922647/",
+              media: Media(m: "https://live.staticflickr.com/65535/52050922647_691336c3fe_m.jpg"),
+              dateTaken: Date(),
+              itemDescription: "<p><a href=\"https://www.flickr.com/people/47676646@N08/\">jambox998</a> posted a photo:</p> <p><a href=\"https://www.flickr.com/photos/47676646@N08/52050922647/\" title=\"20220424_075400\"><img src=\"https://live.staticflickr.com/65535/52050922647_691336c3fe_m.jpg\" width=\"240\" height=\"180\" alt=\"20220424_075400\" /></a></p> ",
+              published: Date(),
+              author: "nobody@flickr.com (\"jambox998\")",
+              authorID: "47676646@N08",
+              tags: "instagram filter")
+        
+        return [dummyItem]
     }
 }
 

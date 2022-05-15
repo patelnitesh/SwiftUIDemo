@@ -55,6 +55,8 @@ class ApiClient {
     }
     
     func loadPhoto(photoId: String) async throws -> PhotoModel?  {
+        
+        print("Loading for PhotoId ",photoId)
         let photoURL = BASE_URL + PHOTO_URL + "&photo_id=\(photoId)"
 
         guard let url = URL(string:photoURL) else {
@@ -92,7 +94,6 @@ class ApiClient {
     func publicFeed() async throws -> [Item]  {
         // SAFE search is not available for some images
         // Will try with URL: ",PUBLIC_FEED_BASE_URL + ADD_RANDOM_IDS)
-        
         guard let url = URL(string:PUBLIC_FEED_BASE_URL) else {
             throw NetworkError.badURL
         }
