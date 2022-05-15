@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PhotoDetailsView: View {
     let flickrPhotos: [FlickrPhoto]
-    let picID: String
+    @State var picID: String
     @State private var selectedId: String = ""
     @State private var isShowingDetailView = false
     @State private var photoModel: PhotoModel!
@@ -52,6 +52,7 @@ struct PhotoDetailsView: View {
         }
         .onChange(of: selectedId) { newValue in
             self.scale = 1.0
+            self.picID = selectedId
         }
         
         .toolbar {

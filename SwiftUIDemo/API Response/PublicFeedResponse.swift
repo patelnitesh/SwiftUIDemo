@@ -52,7 +52,7 @@ struct Item: Codable {
 
 extension  Item {
     static var dummyData: [Item] {
-        let dummyItem = Item.init(title: "Tile",
+        let dummyItem = Item(title: "Tile",
               link: "https://www.flickr.com/photos/47676646@N08/52050922647/",
               media: Media(m: "https://live.staticflickr.com/65535/52050922647_691336c3fe_m.jpg"),
               dateTaken: Date(),
